@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Item: Codable {
-    var title: String = ""
-    var done: Bool = false
-}
+// This class was used when using NSCoder for persisting data
+//class Item_old: Codable {
+//    var title: String = ""
+//    var done: Bool = false
+//}
