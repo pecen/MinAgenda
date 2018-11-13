@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-// This class was used when using NSCoder for persisting data
-//class Item_old: Codable {
-//    var title: String = ""
-//    var done: Bool = false
-//}
+class Item: Object { // Codable {
+    @objc dynamic var title: String = ""
+    @objc dynamic var done: Bool = false
+    @objc dynamic var dateCreated: Date?
+    var parentCategory = LinkingObjects(fromType: Category.self, property: "items")
+}

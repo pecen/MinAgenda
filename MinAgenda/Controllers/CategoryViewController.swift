@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryViewController: ControllerBase {
-
-    var categoryArray = [Category]()
-
+    
+    var categories: Results<Category>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +24,13 @@ class CategoryViewController: ControllerBase {
     // MARK: - TableView Datasource Methods
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryArray.count
+        return categories?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        let category = categoryArray[indexPath.row]
-        
-        cell.textLabel?.text = category.name
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "Ingen Kategori är tillagd"
         
         return cell
     }
@@ -40,7 +38,6 @@ class CategoryViewController: ControllerBase {
     //MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.deselectRow(at: indexPath, animated: true)
 
         performSegue(withIdentifier: "goToItems", sender: self)
     }
@@ -49,7 +46,7 @@ class CategoryViewController: ControllerBase {
         let destinationVC = segue.destination as! TodoListViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = categoryArray[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
         }
     }
 
@@ -61,13 +58,11 @@ class CategoryViewController: ControllerBase {
         let alert = UIAlertController(title: "Lägg till en ny Kategori", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Lägg till", style: .default) { (action) in
-            let newCategory = Category(context: self.context)
+            let newCategory = Category()
             
-            newCategory.name = textField.text == "" ?  "Ny Kategori" : textField.text!
-            
-            self.categoryArray.append(newCategory)
-            
-            self.saveData()
+            newCategory.name = textField.text == "" ?  "Ny Kategori" : textField.text!            
+
+            self.saveData(data: newCategory)
             
         }
         
@@ -82,13 +77,8 @@ class CategoryViewController: ControllerBase {
         present(alert, animated: true, completion: nil)
     }
     
-
-    func loadCategories(with request: NSFetchRequest<Category> = Category.fetchRequest()) {
-        do {
-            categoryArray = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context. \(error)")
-        }
+    func loadCategories() {
+        categories = realm.objects(Category.self)
         
         tableView.reloadData()
     }
