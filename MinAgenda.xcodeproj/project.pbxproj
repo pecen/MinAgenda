@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83A680C1D8D89A6926B345D0 /* Pods_MinAgenda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A6842703CA7AECA7078116 /* Pods_MinAgenda.framework */; };
+		D00AA825219C91A5002BC407 /* Launch Screen2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00AA824219C91A5002BC407 /* Launch Screen2.storyboard */; };
 		D03A8A912199EBD00096E1AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A8A902199EBD00096E1AC /* Category.swift */; };
 		D04F4DDD21935CF100F45B3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F4DDC21935CF100F45B3D /* AppDelegate.swift */; };
 		D04F4DDF21935CF100F45B3D /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F4DDE21935CF100F45B3D /* TodoListViewController.swift */; };
@@ -17,12 +18,14 @@
 		D04F4DF22195EE9900F45B3D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F4DF12195EE9900F45B3D /* Item.swift */; };
 		D06F82B52199C4F000502A9A /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F82B42199C4F000502A9A /* CategoryViewController.swift */; };
 		D06F82BB2199D31C00502A9A /* ControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F82BA2199D31C00502A9A /* ControllerBase.swift */; };
+		D0DBAE52219AFDF300F64FFB /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBAE51219AFDF300F64FFB /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18A6842703CA7AECA7078116 /* Pods_MinAgenda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinAgenda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6F41BA8373C5A34D9F26B2 /* Pods-MinAgenda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinAgenda.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinAgenda/Pods-MinAgenda.debug.xcconfig"; sourceTree = "<group>"; };
 		66E1407BA682E90BDB9077BD /* Pods-MinAgenda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinAgenda.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinAgenda/Pods-MinAgenda.release.xcconfig"; sourceTree = "<group>"; };
+		D00AA824219C91A5002BC407 /* Launch Screen2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen2.storyboard"; sourceTree = "<group>"; };
 		D03A8A902199EBD00096E1AC /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D04F4DD921935CF100F45B3D /* MinAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04F4DDC21935CF100F45B3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		D04F4DF12195EE9900F45B3D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D06F82B42199C4F000502A9A /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D06F82BA2199D31C00502A9A /* ControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerBase.swift; sourceTree = "<group>"; };
+		D0DBAE51219AFDF300F64FFB /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				D06F82B42199C4F000502A9A /* CategoryViewController.swift */,
 				D04F4DDE21935CF100F45B3D /* TodoListViewController.swift */,
 				D06F82BA2199D31C00502A9A /* ControllerBase.swift */,
+				D0DBAE51219AFDF300F64FFB /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				D04F4DE321935CF200F45B3D /* Assets.xcassets */,
 				D04F4DE521935CF200F45B3D /* LaunchScreen.storyboard */,
+				D00AA824219C91A5002BC407 /* Launch Screen2.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04F4DEF2193600900F45B3D /* Main.storyboard in Resources */,
+				D00AA825219C91A5002BC407 /* Launch Screen2.storyboard in Resources */,
 				D04F4DE721935CF200F45B3D /* LaunchScreen.storyboard in Resources */,
 				D04F4DE421935CF200F45B3D /* Assets.xcassets in Resources */,
 			);
@@ -232,15 +239,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MinAgenda/Pods-MinAgenda-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -257,6 +268,7 @@
 				D06F82B52199C4F000502A9A /* CategoryViewController.swift in Sources */,
 				D04F4DDF21935CF100F45B3D /* TodoListViewController.swift in Sources */,
 				D04F4DF22195EE9900F45B3D /* Item.swift in Sources */,
+				D0DBAE52219AFDF300F64FFB /* SwipeTableViewController.swift in Sources */,
 				D06F82BB2199D31C00502A9A /* ControllerBase.swift in Sources */,
 				D04F4DDD21935CF100F45B3D /* AppDelegate.swift in Sources */,
 				D03A8A912199EBD00096E1AC /* Category.swift in Sources */,
@@ -401,6 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LQCVK238Y;
 				INFOPLIST_FILE = MinAgenda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LQCVK238Y;
 				INFOPLIST_FILE = MinAgenda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

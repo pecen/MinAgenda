@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //print(Realm.Configuration.defaultConfiguration.fileURL)
 
+        Thread.sleep(forTimeInterval: 3.0)
+
         do {
             _ = try Realm()
         } catch {

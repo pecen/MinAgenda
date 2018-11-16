@@ -7,27 +7,10 @@
 //
 
 import UIKit
-//import CoreData
 import RealmSwift
 
 class ControllerBase: UITableViewController {
     let realm = try! Realm()
-    
-    // CoreData
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    // Nedanstående används endast med CoreData
-//    func loadData<T>(with request: NSFetchRequest<T>) -> [T] {
-//        do {
-//            return try context.fetch(request)
-//        } catch {
-//            print("Error fetching data from context. \(error)")
-//        }
-//
-//        //tableView.reloadData()
-//
-//        return []
-//    }
 
     func saveData(data: Object) {
         do {

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,13 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redesajn_logo2" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-xw-JoV">
-                                <rect key="frame" x="0.0" y="164" width="375" height="256"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redesajn_logo2" translatesAutoresizingMaskIntoConstraints="NO" id="oyP-F3-mbk">
+                                <rect key="frame" x="0.0" y="225" width="359" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="88o-hI-jMU"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="oyP-F3-mbk" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="9ol-uZ-eVW"/>
+                            <constraint firstItem="oyP-F3-mbk" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="205" id="k6D-In-BNp"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="oyP-F3-mbk" secondAttribute="trailing" constant="16" id="tLn-Gj-ec6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
